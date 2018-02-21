@@ -26,9 +26,11 @@ public class Bank {
      * @return boolean
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        if (0 < bankAccount.accountBalance - amount) {
+            bankAccount.accountBalance -= amount;
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -42,9 +44,11 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        if (0 < bankAccount.accountBalance + amount) {
+            bankAccount.accountBalance += amount;
+            return true;
+        }
+        return false;
     }
 
     /**
